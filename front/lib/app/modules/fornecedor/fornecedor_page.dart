@@ -110,7 +110,7 @@ class _FornecedorPageState extends State<FornecedorPage> {
                   return const Text("Erro");
                 }
 
-                final tp = (snapshot.data ?? []).cast<SecretariaModel?>();
+                final tp = (snapshot.data ?? []).cast<FornecedorModel?>();
 
                 return SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -325,7 +325,7 @@ class _FornecedorPageState extends State<FornecedorPage> {
                     },
                   ),
                   TextFormField(
-                    controller:fornecedorNomeFantasiaEditCtrl,
+                    controller: fornecedorNomeFantasiaEditCtrl,
                     decoration: const InputDecoration(
                       labelText: 'Nome Fantasia',
                     ),
@@ -459,7 +459,7 @@ class _FornecedorPageState extends State<FornecedorPage> {
                   telefone: fornecedorTelefoneEditCtrl.text,
                   nomeRazaoSocial: fornecedorNRSocialEditCtrl.text,
                   numero: int.tryParse(fornecedorNumeroEditCtrl.text),
-                  descricao: fornecedorNomeFantasiaEditCtrl.text,
+                  nomeFantasia: fornecedorNomeFantasiaEditCtrl.text,
                   situacao: situacaoEnum,
                 );
                 if (isEdit) {

@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:front/app/util/situacao_enum.dart';
 
 class FornecedorModel {
-    final int? id;
+  final int? id;
   final String? nome;
   final String? nomeRazaoSocial;
   final String? email;
@@ -19,7 +19,7 @@ class FornecedorModel {
   final String? telefone;
   final SituacaoEnum? situacao;
 
-  FornecedorModel( {
+  FornecedorModel({
     this.id,
     this.nome,
     this.nomeRazaoSocial,
@@ -33,7 +33,7 @@ class FornecedorModel {
     this.bairro,
     this.cidade,
     this.estado,
-     this.situacao,
+    this.situacao,
   });
 
   Map<String, dynamic> toMap() {
@@ -47,6 +47,7 @@ class FornecedorModel {
       'descricao': nomeFantasia,
       'logradouro': logradouro,
       'numero': numero,
+      'telefone': telefone,
       'bairro': bairro,
       'cidade': cidade,
       'estado': estado,
@@ -64,7 +65,8 @@ class FornecedorModel {
       email: map['email'] != null ? map['email'] as String : null,
       cnpj: map['cnpj'] != null ? map['cnpj'] as String : null,
       cep: map['cep'] != null ? map['cep'] as int : null,
-      nomeFantasia: map['descricao'] != null ? map['descricao'] as String : null,
+      nomeFantasia:
+          map['descricao'] != null ? map['descricao'] as String : null,
       logradouro:
           map['logradouro'] != null ? map['logradouro'] as String : null,
       numero: map['numero'] as int,
@@ -77,23 +79,23 @@ class FornecedorModel {
 
   static String toJson(FornecedorModel value) => json.encode(value.toMap());
 
-factory FornecedorModel.fromJson(String source) => FornecedorModel.fromMap(
+  factory FornecedorModel.fromJson(String source) => FornecedorModel.fromMap(
         json.decode(source) as Map<String, dynamic>,
-);
-FornecedorModel copyWith({
+      );
+  FornecedorModel copyWith({
     int? id,
     String? nome,
     String? nomeRazaoSocial,
     String? email,
     String? cnpj,
     int? cep,
-    String? descricao,
     String? logradouro,
     int? numero,
     String? telefone,
     String? bairro,
     String? cidade,
     String? estado,
+    String? nomeFantasia,
     SituacaoEnum? situacao,
   }) {
     return FornecedorModel(

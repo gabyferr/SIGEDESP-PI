@@ -211,7 +211,7 @@ class _OrcamentoPageState extends State<OrcamentoPage> {
     if (!isEdit) {
       orcamento = OrcamentoModel();
     }
-    TipoDespesasModel? selectedTipoDespesa;
+    // TipoDespesasModel? selectedTipoDespesa;
     InstituicaoModel? selectedInstituicao;
 
     TextEditingController orcamentoAnoEditCtrl = TextEditingController(
@@ -269,13 +269,13 @@ class _OrcamentoPageState extends State<OrcamentoPage> {
                     selectedInstituicao = value;
                   },
                 ),
-                MyDropDownGetComp<TipoDespesasModel, TipoDeDespesasServiceImpl>(
-                  labelText: 'Fornecedor',
-                  initValue: selectedTipoDespesa,
-                  onChanged: (value) {
-                    selectedTipoDespesa = value;
-                  },
-                )
+                // MyDropDownGetComp<TipoDespesasModel, TipoDeDespesasServiceImpl>(
+                //   labelText: 'Fornecedor',
+                //   initValue: selectedTipoDespesa,
+                //   onChanged: (value) {
+                //     selectedTipoDespesa = value;
+                //   },
+                // )
               ],
             );
           }),
@@ -291,7 +291,7 @@ class _OrcamentoPageState extends State<OrcamentoPage> {
               onPressed: () async {
                 orcamento = orcamento?.copyWith(
                   anoOrcamento: int.tryParse(orcamentoAnoEditCtrl.text),
-                  idTipoDespesa: selectedTipoDespesa?.id,
+                  // idTipoDespesa: selectedTipoDespesa?.id,
                   idInstituicao: selectedInstituicao?.id,
                 );
                 if (isEdit) {

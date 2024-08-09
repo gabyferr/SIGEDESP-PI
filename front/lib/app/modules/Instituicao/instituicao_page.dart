@@ -330,6 +330,18 @@ class _InstituicaoPageState extends State<InstituicaoPage> {
                     },
                   ),
                   TextFormField(
+                    controller: instituicaoTelefoneEditCtrl,
+                    decoration: const InputDecoration(
+                      labelText: 'Telefone',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Campo obrigatório';
+                      }
+                      return null;
+                    },
+                  ),
+                  TextFormField(
                     controller: instituicaoEmailEditCtrl,
                     decoration: const InputDecoration(
                       labelText: 'Email',
@@ -423,7 +435,7 @@ class _InstituicaoPageState extends State<InstituicaoPage> {
                     onChanged: (value) {
                       situacaoEnum = value!;
                     },
-                    labelText: 'Secretaria',
+                    labelText: 'Situação',
                   ),
                   MyDropDownGetComp<SecretariaModel, SecretariaServiceImpl>(
                     labelText: 'Secretaria',
@@ -504,5 +516,6 @@ class _InstituicaoPageState extends State<InstituicaoPage> {
     instituicaoNomeEditCtrl.dispose();
     instituicaoNRSocialEditCtrl.dispose();
     instituicaoNumeroEditCtrl.dispose();
+    instituicaoTelefoneEditCtrl.dispose();
   }
 }

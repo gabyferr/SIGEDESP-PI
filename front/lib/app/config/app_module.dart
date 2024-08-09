@@ -1,4 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:front/app/modules/fornecedor/fornecedor_page.dart';
+import 'package:front/app/modules/fornecedor/fornecedor_service.dart';
 import 'package:front/app/modules/instituicao/instituicao_page.dart';
 import 'package:front/app/modules/instituicao/instituicao_service.dart';
 import 'package:front/app/modules/instituicao/tipo_instituicao_page.dart';
@@ -29,6 +31,7 @@ class AppModule extends Module {
     i.addLazySingleton(TipoUsuarioServiceImpl.new);
     // i.addLazySingleton(UsuarioServiceImpl.new);
     i.addLazySingleton(UnidadeMedidaServiceImpl.new);
+    i.addLazySingleton(FornecedorServiceImpl.new);
     i.addLazySingleton(UnidadeConsumidoraServiceImpl.new);
     i.addSingleton(ThemeApp.new);
     super.binds(i);
@@ -41,7 +44,9 @@ class AppModule extends Module {
     r.child('/tipoInstituicaoPage', child: (_) => const TipoInstituicao());
     // r.child('/tipoDeDespesas', child: (_) => const TipoDeDespesas());
     r.child('/unidadeDeMedida', child: (_) => const UnidadeDeMedidaPage());
-    r.child('/unidadeConsumidora', child: (_) => const UnidadeConsumidoraPage());
+    r.child('/unidadeConsumidora',
+        child: (_) => const UnidadeConsumidoraPage());
+    r.child('/fornecedor', child: (_) => const FornecedorPage());
     r.child('/usuarioPage', child: (_) => const UsuarioPage());
     r.child('/secretariaPage', child: (_) => const SecretariaPage());
     super.routes(r);

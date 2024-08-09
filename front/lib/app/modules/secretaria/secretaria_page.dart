@@ -430,7 +430,7 @@ class _SecretariaPageState extends State<SecretariaPage> {
                     onChanged: (value) {
                       situacaoEnum = value!;
                     },
-                    labelText: 'Secretaria',
+                    labelText: 'Situação',
                   ),
                 ],
               ),

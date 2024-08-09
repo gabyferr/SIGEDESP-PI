@@ -7,7 +7,6 @@ import 'package:front/app/modules/Instituicao/instituicao_service.dart';
 import 'package:front/app/modules/fornecedor/fornecedor_model.dart';
 import 'package:front/app/modules/fornecedor/fornecedor_service.dart';
 import 'package:front/app/modules/instituicao/instituicao_model.dart';
-import 'package:front/app/modules/secretaria/secretaria_model.dart';
 import 'package:front/app/modules/unidade/unidade_consumidora_model.dart';
 import 'package:front/app/modules/unidade/unidade_consumidora_sevice.dart';
 import 'package:result_dart/result_dart.dart';
@@ -115,7 +114,8 @@ class _UnidadeConsumidoraPageState extends State<UnidadeConsumidoraPage> {
                         return const Text("Erro");
                       }
 
-                      final tp = (snapshot.data ?? []).cast<SecretariaModel?>();
+                      final tp = (snapshot.data ?? [])
+                          .cast<UnidadeConsumidoraModel?>();
 
                       return SizedBox(
                         height: 500,
@@ -244,20 +244,20 @@ class _UnidadeConsumidoraPageState extends State<UnidadeConsumidoraPage> {
                     return null;
                   },
                 ),
-                  MyDropDownGetComp<InstituicaoModel, InstituicaoServiceImpl>(
-                    labelText: 'Instituição',
-                    initValue: selectedInstituicao,
-                    onChanged: (value) {
-                      selectedInstituicao = value;
-                    },
-                  ),
-                  MyDropDownGetComp<FornecedorModel, FornecedorServiceImpl>(
-                    labelText: 'Fornecedor',
-                    initValue: selectedFornecedor,
-                    onChanged: (value) {
-                      selectedFornecedor = value;
-                    },
-                  )
+                MyDropDownGetComp<InstituicaoModel, InstituicaoServiceImpl>(
+                  labelText: 'Instituição',
+                  initValue: selectedInstituicao,
+                  onChanged: (value) {
+                    selectedInstituicao = value;
+                  },
+                ),
+                MyDropDownGetComp<FornecedorModel, FornecedorServiceImpl>(
+                  labelText: 'Fornecedor',
+                  initValue: selectedFornecedor,
+                  onChanged: (value) {
+                    selectedFornecedor = value;
+                  },
+                )
               ],
             );
           }),

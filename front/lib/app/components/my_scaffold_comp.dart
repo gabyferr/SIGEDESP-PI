@@ -91,17 +91,20 @@ class ScaffoldComp extends StatelessWidget {
                           runSpacing: 8,
                           spacing: 8,
                           children: [
-                            const ListTile(
-                              leading: Icon(
+                            ListTile(
+                              leading: const Icon(
                                 Icons.home,
                                 color: Colors.white,
                               ),
-                              title: Text(
+                              title: const Text(
                                 "Tela Inicial",
                                 style: TextStyle(
                                   color: Colors.white,
                                 ),
                               ),
+                              onTap: () {
+                                Modular.to.navigate('/');
+                              },
                             ),
                             const Divider(),
                             ExpansionTile(
@@ -256,11 +259,20 @@ class ScaffoldComp extends StatelessWidget {
                                     ),
                                     ListTile(
                                       title: const Text(
+                                        'Fornecedor',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      onTap: () {
+                                        Modular.to.navigate('/fornecedor');
+                                      },
+                                    ),
+                                    ListTile(
+                                      title: const Text(
                                         'Unidade Medida',
                                         style: TextStyle(color: Colors.white),
                                       ),
                                       onTap: () {
-                                        Modular.to.navigate('/unidadeDeMedida');
+                                        Modular.to.navigate('');
                                       },
                                     ),
                                   ],
