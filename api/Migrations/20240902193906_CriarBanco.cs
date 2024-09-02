@@ -107,7 +107,8 @@ namespace api.Migrations
                     email = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     senha = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     situacao = table.Column<int>(type: "integer", nullable: false),
-                    matricula = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false)
+                    matricula = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
+                    tipousuario = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

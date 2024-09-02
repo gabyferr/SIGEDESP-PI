@@ -674,6 +674,10 @@ namespace api.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("situacao");
 
+                    b.Property<int>("TipoUsuario")
+                        .HasColumnType("integer")
+                        .HasColumnName("tipousuario");
+
                     b.HasKey("Id");
 
                     b.ToTable("usuario");
